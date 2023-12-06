@@ -116,10 +116,14 @@ html,body
     border: 0%;
     background-color: white;
     font-size: 20px;
-    color: white;
+    color: black;
     transition: transform 0.3s ease;
     border: 0px;
+    font-size: 6rem;
+    font-weight: bolder;
 }
+
+
 
 .playable-area-btn:hover
 {
