@@ -12,6 +12,7 @@ function getPlayerChoice(num)
             Xchoice.push(num);
             console.log("X choice: " + Xchoice);
             updateXPlay(num);
+            updateInformation();
             Xturn = 1;
         } 
         else 
@@ -19,6 +20,7 @@ function getPlayerChoice(num)
             Ochoice.push(num);
             console.log("O choice: " + Ochoice);
             updateOPlay(num);
+            updateInformation();
             Xturn = 0;
         }
     }
@@ -107,5 +109,18 @@ function checkOWinCondition()
     if (Ochoice.includes(3) && Ochoice.includes(5) && Ochoice.includes(7)) 
     {
       console.log("O wins !!");
+    }
+}
+
+function updateInformation() 
+{
+    var turnInformation = document.querySelector(".information-on-turn");
+    if (Xturn === 1) 
+    {
+        turnInformation.textContent = "X's turn";
+    } 
+    else 
+    {
+        turnInformation.textContent = "O's turn";
     }
 }

@@ -84,6 +84,18 @@ html,body
     justify-content: center;
 }
 
+.information
+{
+    height: 20vh;
+    width: 50vh;
+    margin-right: 100px;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
 .playable-area
 {
     height:70vh;
