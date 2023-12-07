@@ -29,6 +29,7 @@ function updateXPlay(num)
     var XbuttonElement = document.querySelector(`.btn-${num}`);
     XbuttonElement.textContent = "X";
     checkXWinCondition();
+    checkDrawCondition();
 }
 
 function updateOPlay(num)
@@ -36,6 +37,7 @@ function updateOPlay(num)
     var ObuttonElement = document.querySelector(`.btn-${num}`);
     ObuttonElement.textContent = "O";
     checkOWinCondition();
+    checkDrawCondition();
 }
 
 function checkXWinCondition()
@@ -136,4 +138,17 @@ function displayPopup(message)
     {
         location.reload();
     });
+}
+
+function checkDrawCondition()
+{
+    const buttonElement = document.querySelectorAll(".playable-area-btn");
+    for (var i = 0; i < buttonElement.length; i++)
+    {
+        if(buttonElement[i].textContent == "")
+        {
+            return;
+        }
+    }
+    displayPopup("It is a draw !");
 }
