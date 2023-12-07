@@ -4,19 +4,23 @@ let Ochoice = [];
 
 function getPlayerChoice(num) 
 {
-    if (Xturn === 0) 
+    var buttonElement = document.querySelector(`.btn-${num}`);
+    if(buttonElement.textContent == "")
     {
-        Xchoice.push(num);
-        console.log("X choice: " + Xchoice);
-        updateXPlay(num);
-        Xturn = 1;
-    } 
-    else 
-    {
-        Ochoice.push(num);
-        console.log("O choice: " + Ochoice);
-        updateOPlay(num);
-        Xturn = 0;
+        if (Xturn === 0) 
+        {
+            Xchoice.push(num);
+            console.log("X choice: " + Xchoice);
+            updateXPlay(num);
+            Xturn = 1;
+        } 
+        else 
+        {
+            Ochoice.push(num);
+            console.log("O choice: " + Ochoice);
+            updateOPlay(num);
+            Xturn = 0;
+        }
     }
 }
 
