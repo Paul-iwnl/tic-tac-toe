@@ -10,7 +10,6 @@ function getPlayerChoice(num)
         if (Xturn === 0) 
         {
             Xchoice.push(num);
-            console.log("X choice: " + Xchoice);
             updateXPlay(num);
             updateInformation();
             Xturn = 1;
@@ -18,7 +17,6 @@ function getPlayerChoice(num)
         else 
         {
             Ochoice.push(num);
-            console.log("O choice: " + Ochoice);
             updateOPlay(num);
             updateInformation();
             Xturn = 0;
@@ -44,35 +42,35 @@ function checkXWinCondition()
 {
     if(Xchoice.includes(1) && Xchoice.includes(2) && Xchoice.includes(3))
     {
-        console.log("X wins !!");
+        displayPopup("X wins !!");
     }
     if (Xchoice.includes(4) && Xchoice.includes(5) && Xchoice.includes(6)) 
     {
-        console.log("X wins !!");
+        displayPopup("X wins !!");
     }
     if (Xchoice.includes(7) && Xchoice.includes(8) && Xchoice.includes(9)) 
     {
-        console.log("X wins !!");
+        displayPopup("X wins !!");
     }
     if (Xchoice.includes(1) && Xchoice.includes(4) && Xchoice.includes(7)) 
     {
-        console.log("X wins !!");
+        displayPopup("X wins !!");
     }
     if (Xchoice.includes(2) && Xchoice.includes(5) && Xchoice.includes(8)) 
     {
-        console.log("X wins !!");
+        displayPopup("X wins !!");
     }
     if (Xchoice.includes(3) && Xchoice.includes(6) && Xchoice.includes(9)) 
     {
-        console.log("X wins !!");
+        displayPopup("X wins !!");
     }
     if (Xchoice.includes(1) && Xchoice.includes(5) && Xchoice.includes(9)) 
     {
-        console.log("X wins !!");
+        displayPopup("X wins !!");
     }
     if (Xchoice.includes(3) && Xchoice.includes(5) && Xchoice.includes(7)) 
     {
-        console.log("X wins !!");
+        displayPopup("X wins !!");
     }
 }
 
@@ -80,35 +78,35 @@ function checkOWinCondition()
 {
     if (Ochoice.includes(1) && Ochoice.includes(2) && Ochoice.includes(3)) 
     {
-      console.log("O wins !!");
+        displayPopup("O wins !!");
     }
     if (Ochoice.includes(4) && Ochoice.includes(5) && Ochoice.includes(6)) 
     {
-      console.log("O wins !!");
+        displayPopup("O wins !!");
     }
     if (Ochoice.includes(7) && Ochoice.includes(8) && Ochoice.includes(9)) 
     {
-      console.log("O wins !!");
+        displayPopup("O wins !!");
     }
     if (Ochoice.includes(1) && Ochoice.includes(4) && Ochoice.includes(7)) 
     {
-      console.log("O wins !!");
+        displayPopup("O wins !!");
     }
     if (Ochoice.includes(2) && Ochoice.includes(5) && Ochoice.includes(8)) 
     {
-      console.log("O wins !!");
+        displayPopup("O wins !!");
     }
     if (Ochoice.includes(3) && Ochoice.includes(6) && Ochoice.includes(9)) 
     {
-      console.log("O wins !!");
+        displayPopup("O wins !!");
     }
     if (Ochoice.includes(1) && Ochoice.includes(5) && Ochoice.includes(9)) 
     {
-      console.log("O wins !!");
+        displayPopup("O wins !!");
     }
     if (Ochoice.includes(3) && Ochoice.includes(5) && Ochoice.includes(7)) 
     {
-      console.log("O wins !!");
+        displayPopup("O wins !!");
     }
 }
 
@@ -123,4 +121,19 @@ function updateInformation()
     {
         turnInformation.textContent = "O's turn";
     }
+}
+
+function displayPopup(message) 
+{
+    const popup = document.getElementById("popup");
+    const popuptext = document.getElementById("popup-text");
+    const overlay = document.getElementById("overlay");
+    var restartButton = document.getElementById("play-again-btn");
+    popuptext.innerText = message;
+    popup.classList.remove("hidden");
+    overlay.classList.add("active");
+    restartButton.addEventListener("click", function() 
+    {
+        location.reload();
+    });
 }
